@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'],
+          ['\\(', '\\)']
+        ]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+  <title>MegaPortraits: One-shot Megapixel Neural Head Avatars</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="static/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="static/css/landing-page.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/bulma-carousel.min.js"></script>
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor//bulma-slider.min.js"></script>
+  <script src="static/vendor/nerfies.js"></script>
+
+</head>
+
+
+<body>
+
+
+
+  <!-- Masthead -->
+  <!-- <header class="masthead text-center bg-light">
+  <div class="overlay"></div>
+    <div class="container">
+    <div class="row">
+      <div class="col-xl-10 mx-auto">
+          <h1 class="title is-1 publication-title">Realistic one-shot mesh-based head avatars</h1>
+    </div>
+  </div>
+  </div>
+  </header> -->
+
+  <section class="hero">
+    <div class="hero-body">
+
+  <div class="container has-text-centered">
+    <h1 class="title is-1 publication-title">
+      MegaPortraits: One-shot Megapixel Neural Head Avatars
+    </h1>
+    <div class="is-size-5 publication-authors">
+      <div class="author-block">
+        <div class="author-portrait">
+            <img class="img-fluid mb-3" src="static/images/nikita.png" alt="" >
+        </div>
+        <a href="mailto:nikita.drobyshev23@gmail.com">Nikita Drobyshev</a><sup>1</sup></div>
+
+      <div class="author-block">
+        <div class="author-portrait">
+          <img class="img-fluid mb-3" src="static/images/jenya.png" alt="" >
+        </div>
+        <a href="">Jenya Chelishev</a><sup>1</sup></div>
+      <div class="author-block">
+        <div class="author-portrait">
+            <img class="img-fluid mb-3" src="static/images/taras.png" alt="" >
+        </div>
+        <a href="https://khakhulin.github.io/">Taras Khakhulin</a><sup>1</sup></div>
+<!--      </p>-->
+      <div class="author-block">
+        <div class="author-portrait">
+          <img class="img-fluid mb-3" src="static/images/alex.png" alt="" >
+        </div>
+        <a href="">Aleksei Ivakhnenko</a><sup>1</sup></div>
+      <div class="author-block">
+        <div class="author-portrait">
+          <img class="img-fluid mb-3" src="static/images/victor.jpg" alt="" >
+        </div>
+        <a href="https://scholar.google.ru/citations?user=gYYVokYAAAAJ">Viktor Lempitsky</a><sup>2</sup></div>
+      <div class="author-block">
+        <div class="author-portrait">
+          <img class="img-fluid mb-3" src="static/images/egor.jpg" alt="" >
+        </div>
+        <a href="https://scholar.google.ru/citations?user=wyF-PxIAAAAJ">Egor Zakharov</a><sup>1</sup>
+      </div>
+
+    </div>
+
+  
+
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><sup>1</sup><a href="https://research.samsung.com/aicenter_moscow">Samsung AI Center, Moscow, Russia</a></span><br>
+          <span class="author-block"><sup>2</sup><a href="https://www.cinemersivelabs.com/">Cinemersive Labs</a></span>
+        </div>
+
+        <div class="is-size-4 publication-authors">
+          ACMM 2022
+        </div>
+
+    <div class="container">
+
+
+            <div class=" is-centered ">
+            <!-- <div class="row" > -->
+            <div class="column is-centered">
+                <div class="item is-centered">
+                  <img class="img-fluid mb-3" src="static/images/add_port.jpg" alt="" >
+                </div>
+            </div>
+              </div>
+
+          <div class=" is-centered ">
+            <!-- <div class="row" > -->
+            <div class="column is-centered">
+                <div class="item is-centered">
+                  <video poster="" id="blocks" autoplay controls muted loop  height="50%">
+                    <source src="static/videos/results/add_port.mp4" type="video/mp4">
+                  </video>
+                </div>
+            </div>
+            </div>
+
+    </div>
+        <!--odiv <div class="is-size-4 publication-authors">
+        </>
+         -->
+
+  <!-- Icons Grid -->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      
+      
+      <div class="row">
+
+        <div class="col-lg-12 ">
+          <a href="https://arxiv.org/abs/2207.07621" style="text-decoration : none; color : #000000;">
+            <div class="features-icons-item mx-auto mb-1 mb-lg-1">
+<!--            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">-->
+              <div class="features-icons-icon d-flex">
+                <i class="ai ai-arxiv m-auto text-primary"></i>
+              </div>
+              <h5>PDF (20 Mb)</h5>
+              <p class="mylead mb-0">Download from arXiv</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="is-centered">
+
+          <div class="content  is-centered has-text-centered">
+            <h2 class="title is-3">Abstract</h2>
+          </div>
+
+
+          <div class="content has-text-justified">
+
+            <p class="lead mb-0" align="justify">
+In this work, we advance the neural head avatar technology to the
+megapixel resolution while focusing on the particularly challenging
+task of cross-driving synthesis, i.e., when the appearance of the
+driving image is substantially different from the animated source
+image. We propose a set of new neural architectures and training
+methods that can leverage both medium-resolution video data and
+high-resolution image data to achieve the desired levels of rendered
+image quality and generalization to novel views and motion. We
+show that suggested architectures and methods produce convincing
+high-resolution neural avatars, outperforming the competitors in
+the cross-driving scenario. Lastly, we show how a trained high-
+resolution neural avatar model can be distilled into a lightweight
+student model which runs in real-time and locks the identities of
+neural avatars to several dozens of pre-defined source images. Real-time operation and identity lock are essential for many practical
+applications head avatar systems.
+            </p>
+            <p class="lead mb-0" align="justify">
+            </p>
+            <p class="lead mb-0" align="justify">
+            </p>
+        </div>
+
+        
+          <div class=" is-centered ">
+            <!-- <div class="row" > -->
+            <div class="column is-centered">
+                <div class="item is-centered">
+                  <video poster="" id="blocks" autoplay controls muted loop  height="50%">
+                    <source src="static/videos/results/nikita_2drivers_1024_compressed.mp4" type="video/mp4">
+                  </video>
+                </div>
+            </div>
+
+         </div>
+
+
+          <div class=" is-centered ">
+            <!-- <div class="row" > -->
+            <div class="column is-centered">
+                <div class="item is-centered">
+                  <video poster="" id="blocks" autoplay controls muted loop  height="50%">
+                    <source src="static/videos/results/kate_2drivers_1024_compressed.mp4" type="video/mp4">
+                  </video>
+                </div>
+            </div>
+            </div>
+
+        <div class="content has-text-centered">
+          <h2 class="title is-4">Main scheme</h2>
+        </div>
+
+        <div>
+          <center>
+            <div class="row">
+              <div class="offset-lg-2 col-lg-8 text-white">
+                <img class="img-fluid mb-3" src="static/images/method.png" alt="" >
+              </div>
+            </div>
+        </div>
+
+      <div class="content has-text-justified is-four-fifths">
+        <p>
+          We propose a system for the one-shot creation of high-resolution
+          human avatars, called megapixel portraits or MegaPortraits for short.
+          Our model is trained in two stages. Optionally, we propose an
+          additional distillation stage for faster inference.
+        </p>
+        <p>
+          Our training setup is relatively standard. We sample two random frames from our dataset at each step: the source frame and the driver frame. Our model imposes the motion of the driving frame (i.e., the
+          head pose and the facial expression) onto the appearance of the source frame to produce an output image. The main learning signal is obtained from the training episodes where the source and the
+          driver frames come from the same video, and hence our model’s prediction is trained to match the driver frame.
+        </p>      
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+<!--  <section class="hero">-->
+<!--    &lt;!&ndash; <div class="columns is-centered">-->
+<!--      <h2 class="title is-4">Magnification Results</h2>-->
+<!--    </div> &ndash;&gt;-->
+<!--    <div class="hero-body">-->
+<!--  </section>-->
+
+
+  <section class="section">
+    
+<!--    <div class="container">-->
+<!--          <div class=" is-centered ">-->
+<!--            &lt;!&ndash; <div class="row" > &ndash;&gt;-->
+<!--            <div class="column is-centered">-->
+<!--                <div class="item is-centered">-->
+<!--                  <video poster="" id="blocks" autoplay controls muted loop  height="50%">-->
+<!--                    <source src="static/videos/results/presentation.mp4" type="video/mp4">-->
+<!--                  </video>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--  -->
+<!--    </div>-->
+
+
+<!--     <div class="container"> -->
+<!--           <div class=" is-centered "> -->
+<!--             <div class="column is-centered"> -->
+<!--                 <div class="item is-centered"> -->
+<!--                   <video poster="" id="blocks" autoplay controls muted loop > -->
+<!--                     <source src="static/videos/results/megaportraits_new.mp4" type="video/mp4"> -->
+<!--                   </video> -->
+<!--                 </div> -->
+<!--             </div> -->
+<!--     </div> -->
+
+
+
+<!--    <div class="container">-->
+<!--      <div class="content  is-centered has-text-centered">-->
+<!--        <h3 class="title is-2">Comparision</h3>-->
+<!--      </div>-->
+
+<!--    <div class="columns is-centered">-->
+
+<!--        <div class="column">-->
+<!--          <h3 class="title is-4">256 input/output resolution</h3>-->
+<!--          <div class="columns is-centered">-->
+<!--            <div class="column content">-->
+<!--              <div class="text-white">-->
+<!--                <img class="img-fluid mb-3" src="static/images/256.png" alt="" >-->
+<!--              </div>-->
+<!--            </div>-->
+<!--  -->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="column">-->
+<!--          <h3 class="title is-4">512 input/output resolution</h3>-->
+<!--          <div class="columns is-centered">-->
+<!--            <div class="column content">-->
+<!--              <div class="text-white">-->
+<!--                <img class="img-fluid mb-3" src="static/images/512.png" alt="" >-->
+<!--              </div>-->
+<!--            </div>-->
+<!--  -->
+<!--          </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <br><br>-->
+<!--    <hr>-->
+<!--  </div>-->
+
+
+  
+
+</div>
+
+  </div>
+
+  
+
+  <section class="section" id="BibTeX">
+    <div class="container content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+      @inproceedings{Drobyshev22MP,
+                author = {Drobyshev, Nikita and Chelishev, Jenya and Khakhulin, Taras and Ivakhnenko, Aleksei and Lempitsky, Victor and Zakharov, Egor},
+                title = {MegaPortraits: One-shot Megapixel Neural Head Avatars},
+                journal   = {Proceedings of the 30th ACM International Conference on Multimedia},
+                year      = {2022},
+      }
+    </code></pre>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <p class="footer-text mb-4 mb-lg-0">MegaPortraits</p>
+
+          <div class="columns">
+            <div class="content footer-text col-lg-8 h-60">
+                This website is based on <a href="https://nerfies.github.io">nerfies</a>.
+            </div>
+          </div>
+          
+        </div>
+   
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="https://arxiv.org/abs/TODO" class="footer-icon">
+                  <i class="ai ai-arxiv"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="./paper/" class="footer-icon">
+                <i class="fa fa-file-image-o"></i>
+              </a>
+            </li>
+            
+            <li class="list-inline-item">
+              <a href="https://github.com/SamsungLabs/" class="footer-icon">
+                <i class="fa fa-git"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="./cite.txt" class="footer-icon">
+                <i class="icon-graduation"></i>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  </footer>
+
+
+</body>
+
+</html>
